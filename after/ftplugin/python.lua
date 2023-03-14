@@ -1,0 +1,2 @@
+-- nnoremap <buffer> <leader>c :call RunCommandInSplit('python3')<CR> a
+-- nnoremap <buffer> <leader>C :call RunCommand('python3')<CR> a

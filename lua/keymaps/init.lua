@@ -1,0 +1,7 @@
+require("keymaps.dap")
+require("keymaps.trouble")
+require("keymaps.defaults")
+require("keymaps.telescope")
+require("keymaps.neorg")
+require("keymaps.nvim-tree")
+require("keymaps.fugitive")
