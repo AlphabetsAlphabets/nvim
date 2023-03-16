@@ -19,27 +19,24 @@ end
 require("nvim-dap-virtual-text").setup()
 
 
-adapters.cppdbg = {
-	id = 'cppdbg',
-	type = 'executable',
-	command = '/home/yjh/lsps/vscode-cpptools/extension/debugAdapters/bin/OpenDebugAD7',
+adapters.codelldb = {
+  type = 'server',
+  port = '${port}',
+  executable = {
+    command = '/home/yjh/lsps/codelldb/extension/adapter/codelldb',
+    args = { "--port", "${port}" },
+  }
 }
 
 config.rust = {
   {
     name = "Launch file",
-    type = "cppdbg",
+    type = "codelldb",
     request = "launch",
-
-    stopAtEntry = true,
-    cwd = '${workspaceFolder}',
-
-    MIMode = 'gdb',
-    miDebuggerPath = '/home/yjh/.cargo/bin/rust-gdb',
-
     program = function()
       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
-  }
+    cwd = '${workspaceFolder}',
+    stopOnEntry = false,
+  },
 }
-

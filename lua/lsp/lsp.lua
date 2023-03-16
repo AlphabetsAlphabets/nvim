@@ -18,7 +18,6 @@ local on_attach = function(client, bufnr)
 	local lsp = vim.lsp
 
   local diag_opts = {
-    virtual_text = false,
     float = {
       border = 'rounded',
     }

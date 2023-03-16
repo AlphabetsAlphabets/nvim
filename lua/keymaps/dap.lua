@@ -25,7 +25,7 @@ Map("n", "<leader>ds", function()
 	widgets.centered_float(widgets.scopes)
 end)
 
-Map("n", "<leader>tb", dap.toggle_breakpoint)
+Map("n", "<A-b>", dap.toggle_breakpoint)
 Map("n", "<leader>cab", dap.clear_breakpoints)
 
 Map("n", "<leader>ro", dap.repl.open)

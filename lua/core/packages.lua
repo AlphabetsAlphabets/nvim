@@ -24,9 +24,13 @@ return require('packer').startup(function()
       ts_update()
     end,
   }
-  -- Git support
+  -- Git integration
   use 'lewis6991/gitsigns.nvim'
   use 'https://github.com/tpope/vim-fugitive'
+  use {
+    'ldelossa/gh.nvim',
+    requires = { 'ldelossa/litee.nvim' }
+  }
 
   -- Aesthetics
   use {

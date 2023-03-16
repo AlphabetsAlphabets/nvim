@@ -1,4 +1,5 @@
 require("plugins.lualine")
+require("plugins.gh")
 require("plugins.nvim-tree")
 require("plugins.neorg")
 require("plugins.dap")

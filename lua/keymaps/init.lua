@@ -1,4 +1,5 @@
 require("keymaps.dap")
+require("keymaps.gh")
 require("keymaps.trouble")
 require("keymaps.defaults")
 require("keymaps.telescope")
