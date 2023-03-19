@@ -38,5 +38,8 @@ cmp.setup {
 		{ name = 'nvim_lsp' },
 		{ name = 'luasnip' },
 		{ name = "neorg" },
+    { name = 'git'}
 	},
 }
+
+require("cmp_git").setup()

@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["cmp-git"] = {
+    loaded = true,
+    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/cmp-git",
+    url = "https://github.com/petertriho/cmp-git/"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -102,11 +107,6 @@ _G.packer_plugins = {
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/gdb.nvim",
     url = "https://github.com/AlphabetsAlphabets/gdb.nvim"
   },
-  ["gh.nvim"] = {
-    loaded = true,
-    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/gh.nvim",
-    url = "https://github.com/ldelossa/gh.nvim"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -116,11 +116,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/jsonc.vim",
     url = "https://github.com/neoclide/jsonc.vim"
-  },
-  ["litee.nvim"] = {
-    loaded = true,
-    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/litee.nvim",
-    url = "https://github.com/ldelossa/litee.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -197,6 +192,11 @@ _G.packer_plugins = {
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["octo.nvim"] = {
+    loaded = true,
+    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/octo.nvim",
+    url = "https://github.com/pwntester/octo.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -211,6 +211,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,

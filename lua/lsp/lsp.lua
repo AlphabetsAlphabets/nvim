@@ -32,8 +32,8 @@ local on_attach = function(client, bufnr)
 	Map("n", "<leader>rn", lsp.buf.rename)
 	Map("n", "<leader>ji", lsp.buf.implementation)
 
-	Map("n", "<leader>s", ":Telescope lsp_workspace_symbols<CR>")
-	Map("n", "<leader>S", ":Telescope lsp_document_symbols<CR>")
+	Map("n", "<leader>s", ":Telescope lsp_document_symbols<CR>")
+	Map("n", "<leader>S", ":Telescope lsp_workspace_symbols query=")
 
 	Map("n", "[qd", vim.diagnostic.setqflist)
   Map('n', "[e", vim.diagnostic.open_float)

@@ -27,10 +27,7 @@ return require('packer').startup(function()
   -- Git integration
   use 'lewis6991/gitsigns.nvim'
   use 'https://github.com/tpope/vim-fugitive'
-  use {
-    'ldelossa/gh.nvim',
-    requires = { 'ldelossa/litee.nvim' }
-  }
+  use 'https://github.com/pwntester/octo.nvim'
 
   -- Aesthetics
   use {
@@ -81,10 +78,12 @@ return require('packer').startup(function()
   use "williamboman/mason-lspconfig.nvim"
 
   --- LSP config
+  use 'https://github.com/simrat39/rust-tools.nvim'
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'saadparwaiz1/cmp_luasnip'
+  use 'https://github.com/petertriho/cmp-git/'
   use 'L3MON4D3/LuaSnip'
   use {
     "folke/trouble.nvim",
