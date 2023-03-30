@@ -38,7 +38,7 @@ cmp.setup {
 		{ name = 'nvim_lsp' },
 		{ name = 'luasnip' },
 		{ name = "neorg" },
-    { name = 'git'}
+    { name = 'git'} -- Git completion
 	},
 }
 

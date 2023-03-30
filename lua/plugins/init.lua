@@ -6,6 +6,7 @@ require("plugins.neorg")
 
 require("plugins.nvim-tree")
 require("plugins.telescope")
+require("plugins.undotree")
 
 require("plugins.lualine")
 require("plugins.treesitter")

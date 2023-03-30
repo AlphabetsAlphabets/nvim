@@ -31,7 +31,11 @@ Map("n", "<leader>.", "5<C-w>>", {})
 Map("n", "<leader>,", "5<C-w><", {})
 
 --- Movement
+---- Toggle hybrid line numbers
 Map("n", "<A-l>", "<cmd>set nu! rnu!<CR>", {})
+Map("x", "<A-l>", "<cmd>set nu! rnu!<CR>", {})
+Map("v", "<A-l>", "<cmd>set nu! rnu!<CR>", {})
+
 Map("n", "s", "$", {})
 Map("n", "S", "^", {})
 

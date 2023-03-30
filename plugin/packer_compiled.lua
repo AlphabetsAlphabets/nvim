@@ -177,6 +177,11 @@ _G.packer_plugins = {
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-navic"] = {
+    loaded = true,
+    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/nvim-navic",
+    url = "https://github.com/SmiteshP/nvim-navic"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -212,6 +217,11 @@ _G.packer_plugins = {
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["renamer.nvim"] = {
+    loaded = true,
+    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/renamer.nvim",
+    url = "https://github.com/filipdutescu/renamer.nvim"
+  },
   ["rust-tools.nvim"] = {
     loaded = true,
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
@@ -231,6 +241,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
+  },
+  undotree = {
+    loaded = true,
+    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
   },
   ["vim-commentary"] = {
     loaded = true,
