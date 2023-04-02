@@ -1,7 +1,7 @@
 -- for quotes
 math.randomseed(os.time())
 
-Cmd("colorscheme nord")
+Cmd("colorscheme " .. Theme)
 
 -- Netrw
 G.loaded_netrw = 1

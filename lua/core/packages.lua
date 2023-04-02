@@ -14,6 +14,10 @@ Cmd([[command! Sync :w | so % | :PackerSync]])
 
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
+  
+  -- Theme
+  use 'https://github.com/shaunsingh/nord.nvim'
+  use 'https://github.com/Mofiqul/vscode.nvim'
 
   -- Editing
   use 'https://github.com/mbbill/undotree'
@@ -61,7 +65,6 @@ return require('packer').startup(function()
     end
   }
 
-  use 'https://github.com/shaunsingh/nord.nvim'
 
   -- File browsing
   --- Nvim tree
