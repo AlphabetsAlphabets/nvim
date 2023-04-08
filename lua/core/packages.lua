@@ -14,7 +14,7 @@ Cmd([[command! Sync :w | so % | :PackerSync]])
 
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
-  
+
   -- Theme
   use 'https://github.com/shaunsingh/nord.nvim'
   use 'https://github.com/Mofiqul/vscode.nvim'
@@ -111,15 +111,24 @@ return require('packer').startup(function()
   use 'https://github.com/theHamsta/nvim-dap-virtual-text'
   use 'https://github.com/rcarriga/nvim-dap-ui'
 
+  -- Latex
+  use 'https://github.com/lervag/vimtex'
+
   -- Misc
+  --- Note taking with neorg
   use {
     "nvim-neorg/neorg",
     requires = {
       "nvim-lua/plenary.nvim",
     }
   }
+
+  --- Neorg extension
   use 'https://github.com/nvim-neorg/neorg-telescope'
 
+  --- json syntax highlighting
   use 'https://github.com/neoclide/jsonc.vim'
+
+  --- Centers current buffer
   use { "shortcuts/no-neck-pain.nvim", tag = "*" }
 end)
