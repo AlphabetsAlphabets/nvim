@@ -17,7 +17,6 @@ Cmd("highlight! StatusLineNC guifg=#002b36 guibg=#859900")
 -- For VimTex
 Cmd("filetype plugin indent on")
 
-
 -- Netrw
 G.loaded_netrw = 1
 G.loaded_netrwPlugin = 1
@@ -47,7 +46,6 @@ O.mouse = ""
 
 O.syntax = 'enable'
 O.showmatch = true
--- O.colorcolumn = '80'
 O.ignorecase = true
 O.smartcase = true
 O.shortmess = 'c'
