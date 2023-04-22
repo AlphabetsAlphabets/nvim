@@ -16,19 +16,11 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- Theme
-  use 'https://github.com/shaunsingh/nord.nvim'
-  use 'https://github.com/Mofiqul/vscode.nvim'
+  use 'https://github.com/maxmx03/solarized.nvim'
 
   -- Editing
-  use 'https://github.com/mbbill/undotree'
   use 'https://github.com/tpope/vim-commentary'
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function()
-      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-      ts_update()
-    end,
-  }
+
   -- Git integration
   use 'lewis6991/gitsigns.nvim'
   use 'https://github.com/tpope/vim-fugitive'
@@ -38,11 +30,6 @@ return require('packer').startup(function()
   use 'https://github.com/petertriho/cmp-git/'
 
   -- Aesthetics
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-
   use {
     'glepnir/dashboard-nvim',
     event = 'VimEnter',
@@ -68,7 +55,7 @@ return require('packer').startup(function()
 
   -- File browsing
   --- Nvim tree
-  use 'https://github.com/nvim-tree/nvim-tree.lua'
+  use 'https://github.com/tamago324/lir.nvim'
 
   --- Telescope
   use 'nvim-lua/popup.nvim'
@@ -94,16 +81,11 @@ return require('packer').startup(function()
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
   use {
-    "SmiteshP/nvim-navic",
-    requires = "neovim/nvim-lspconfig"
-  }
-  use {
     'filipdutescu/renamer.nvim',
     branch = 'master',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use 'https://github.com/simrat39/rust-tools.nvim'
-
 
   --- Debugging
   use 'https://github.com/AlphabetsAlphabets/gdb.nvim'
@@ -115,17 +97,6 @@ return require('packer').startup(function()
   use 'https://github.com/lervag/vimtex'
 
   -- Misc
-  --- Note taking with neorg
-  use {
-    "nvim-neorg/neorg",
-    requires = {
-      "nvim-lua/plenary.nvim",
-    }
-  }
-
-  --- Neorg extension
-  use 'https://github.com/nvim-neorg/neorg-telescope'
-
   --- json syntax highlighting
   use 'https://github.com/neoclide/jsonc.vim'
 

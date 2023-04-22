@@ -5,4 +5,4 @@ Api = vim.api
 O = vim.opt -- options
 G = vim.g
 
-Theme = "vscode"
+Theme = "solarized"

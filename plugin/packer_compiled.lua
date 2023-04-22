@@ -117,10 +117,10 @@ _G.packer_plugins = {
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/jsonc.vim",
     url = "https://github.com/neoclide/jsonc.vim"
   },
-  ["lualine.nvim"] = {
+  ["lir.nvim"] = {
     loaded = true,
-    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
+    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/lir.nvim",
+    url = "https://github.com/tamago324/lir.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -132,25 +132,10 @@ _G.packer_plugins = {
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  neorg = {
-    loaded = true,
-    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/neorg",
-    url = "https://github.com/nvim-neorg/neorg"
-  },
-  ["neorg-telescope"] = {
-    loaded = true,
-    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/neorg-telescope",
-    url = "https://github.com/nvim-neorg/neorg-telescope"
-  },
   ["no-neck-pain.nvim"] = {
     loaded = true,
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/no-neck-pain.nvim",
     url = "https://github.com/shortcuts/no-neck-pain.nvim"
-  },
-  ["nord.nvim"] = {
-    loaded = true,
-    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/nord.nvim",
-    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -176,21 +161,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-navic"] = {
-    loaded = true,
-    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/nvim-navic",
-    url = "https://github.com/SmiteshP/nvim-navic"
-  },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/nvim-tree/nvim-tree.lua"
-  },
-  ["nvim-treesitter"] = {
-    loaded = true,
-    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -227,6 +197,11 @@ _G.packer_plugins = {
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
   },
+  ["solarized.nvim"] = {
+    loaded = true,
+    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/solarized.nvim",
+    url = "https://github.com/maxmx03/solarized.nvim"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -242,11 +217,6 @@ _G.packer_plugins = {
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
-  undotree = {
-    loaded = true,
-    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/undotree",
-    url = "https://github.com/mbbill/undotree"
-  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/vim-commentary",
@@ -261,11 +231,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yjh/.local/share/nvim/site/pack/packer/start/vimtex",
     url = "https://github.com/lervag/vimtex"
-  },
-  ["vscode.nvim"] = {
-    loaded = true,
-    path = "/home/yjh/.local/share/nvim/site/pack/packer/start/vscode.nvim",
-    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 

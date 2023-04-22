@@ -7,8 +7,3 @@ require("keymaps.dap")
 require("keymaps.trouble")
 
 require("keymaps.telescope")
-require("keymaps.nvim-tree")
-
-require("keymaps.undotree")
-
-require("keymaps.neorg")

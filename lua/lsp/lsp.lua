@@ -1,8 +1,7 @@
 local lspconfig = require("lspconfig")
-local navic = require("nvim-navic")
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local servers = { "ccls", "rust_analyzer", "pyright", "lua_ls" }
+local servers = { "ccls", "rust_analyzer", "pyright", "lua_ls", "hls" }
 
 local border = {
   { "╭", "FloatBorder" },
@@ -60,10 +59,6 @@ local on_attach = function(client, bufnr)
       border = 'rounded',
     }
   }
-
-  if client.server_capabilities.documentSymbolProvider then
-    navic.attach(client, bufnr)
-  end
 
   vim.diagnostic.config(diag_opts)
 

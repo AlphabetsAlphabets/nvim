@@ -57,7 +57,6 @@ require('nvim-tree').setup({
 				{ key = "H", action = "collapse_all", action_cb = collapse_all }
 			}
 		},
-    side = "right",
 		number = true,
 		relativenumber = true,
 	},

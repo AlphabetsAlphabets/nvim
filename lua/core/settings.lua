@@ -1,10 +1,22 @@
 -- for quotes
 math.randomseed(os.time())
 
+-- colorscheme config
+require("solarized"):setup({
+  config = {
+    theme = 'neovim'
+  }
+})
+
 Cmd("colorscheme " .. Theme)
+O.statusline = "%l:%c/%L (%p%%) %=%f"
+
+Cmd("highlight! StatusLine guifg=#002b36 guibg=#859900")
+Cmd("highlight! StatusLineNC guifg=#002b36 guibg=#859900")
 
 -- For VimTex
 Cmd("filetype plugin indent on")
+
 
 -- Netrw
 G.loaded_netrw = 1
@@ -26,6 +38,7 @@ O.wrap = false
 O.clipboard = "unnamedplus"
 
 -- standard
+Cmd("set nu rnu")
 O.foldmethod = "manual"
 O.scrolloff = 20
 Map("n", "<SPACE>", "<Nop>", {})
