@@ -1,5 +1,6 @@
 require('core.globals')
 require('core.packages')
-require('core.settings')
+require('core.setting')
 require('core.functions')
 require('core.autocommands')
+require("core.override")
