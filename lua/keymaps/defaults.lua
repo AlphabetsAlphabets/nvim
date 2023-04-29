@@ -5,7 +5,7 @@ Cmd([[ nnoremap <expr> j (v:count >= 5 ? "m'" . v:count : "") . 'j' ]])
 Map("n", "<Space>", "<Nop>", {})
 Map("n", "<C-c>", "<cmd>nohl<CR>", {})
 Map("n", "<leader>z", "<cmd>NoNeckPain<CR>", {})
-Map("n", "<leader><leader>x", ":wa | so % | PackerCompile<CR>", {})
+Map("n", "<leader><leader>x", ":wa | so %", {})
 
 -- Windows
 --- Window navigation
