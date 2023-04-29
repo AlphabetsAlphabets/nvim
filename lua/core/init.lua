@@ -1,5 +1,5 @@
+require('core.prelude')
 require('core.globals')
-require('core.packages')
 require('core.setting')
 require('core.functions')
 require('core.autocommands')

@@ -9,6 +9,6 @@ require("no-neck-pain").setup({
       },
     },
     width = 136,
-    minSideBufferWidth = 10,
+    minSideBufferWidth = 15,
     colors = { blend = 0.3 }
 })

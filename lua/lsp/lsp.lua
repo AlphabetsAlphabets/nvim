@@ -1,7 +1,7 @@
 local lspconfig = require("lspconfig")
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local servers = { "ccls", "rust_analyzer", "pyright", "lua_ls", "hls" }
+local servers = { "ccls", "rust_analyzer", "pyright", "lua_ls", "hls", "gopls" }
 
 local border = {
   { "╭", "FloatBorder" },

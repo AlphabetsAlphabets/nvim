@@ -54,9 +54,11 @@ Map("v", "<A-k>", "<C-u>", {})
 
 -- Project navigation
 Map("n", "<leader>gor", ":silent !gh repo view --web<CR>", {}) -- send pane to new tab
-Map("n", "<leader>tt", "<C-w>T", {}) -- send pane to new tab
+Map("n", "<leader>tt", "<C-w>T", {})                           -- send pane to new tab
 Map("n", "<C-w>n", ":tabnew<cr>", {})
 
 Map("n", "<C-k>", ":tabprevious<cr>", {})
 Map("n", "<C-j>", ":tabnext<cr>", {})
 Map("n", "<C-q>", ":tabclose<cr>", {})
+
+Map("n", "<leader><leader>h", ":echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>", {})

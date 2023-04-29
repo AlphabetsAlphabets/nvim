@@ -1,5 +1,5 @@
 -- Color scheme configure overrides at lua/core/override.lua
-Cmd("colorscheme " .. Theme)
+-- Cmd("colorscheme " .. Theme)
 
 -- Statusline
 O.statusline = "%l:%c/%L (%p%%) %=%f"
@@ -8,10 +8,12 @@ O.statusline = "%l:%c/%L (%p%%) %=%f"
 Cmd("filetype plugin indent on")
 
 -- Netrw
+-- Uncommenting these two will disable netrw suitable 
+-- when a filebrowsing plugin is used.
 G.loaded_netrw = 1
 G.loaded_netrwPlugin = 1
 G.netrw_banner = 0
-G.netrw_liststyle = 0
+G.netrw_liststyle = 3
 G.netrw_bufsettings = "nu rnu"
 
 -- By default searches are case insensitive unless an uppercase is
