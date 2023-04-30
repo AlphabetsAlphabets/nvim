@@ -26,7 +26,7 @@ O.ignorecase = true
 --
 -- If changes are made to hidden buffers and they are unsaved.
 -- Setting this to true will ask if you want to save changes.
-O.hidden = false
+O.hidden = true
 -- If for some reason power is cut or lost, unsaved changes are not lost.
 -- The help file says to not use for big files
 O.swapfile = true

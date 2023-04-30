@@ -30,22 +30,21 @@ require("lazy").setup({
   'tpope/vim-fugitive',
 
   -- LSP
-  'petertriho/cmp-git',
-
+  -- Must haves
   'neovim/nvim-lspconfig',
-  'saadparwaiz1/cmp_luasnip',
-  'L3MON4D3/LuaSnip',
-  'hrsh7th/nvim-cmp',
-  'hrsh7th/cmp-nvim-lsp',
   "folke/trouble.nvim",
+  'hrsh7th/nvim-cmp', -- completion
+  'filipdutescu/renamer.nvim',
+  'quangnguyen30192/cmp-nvim-ultisnips',
+  --- Completion sources
+  'hrsh7th/cmp-nvim-lsp',
+  "hrsh7th/cmp-nvim-lsp-signature-help",
+  'petertriho/cmp-git',
 
   -- LSP tools
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
-  {
-    'filipdutescu/renamer.nvim',
-    branch = 'master'
-  },
+  "VidocqH/lsp-lens.nvim",
 
   -- Debugging
   'mfussenegger/nvim-dap',
@@ -55,6 +54,8 @@ require("lazy").setup({
   'shortcuts/no-neck-pain.nvim',
 
   -- Misc
+  'm4xshen/hardtime.nvim',
+  'SirVer/ultisnips',
   'neoclide/jsonc.vim',   -- Syntax higlighting
   'tpope/vim-commentary', -- Bulk commenting
   {
@@ -62,7 +63,7 @@ require("lazy").setup({
     event = 'VimEnter',
     config = function()
       local opts = require("plugins.dashboard")
-      require("dashboard").setup {
+      require("dashboard").setup { -- Start up screen
         theme = 'doom',
         hide = { statusline = true },
         config = {
