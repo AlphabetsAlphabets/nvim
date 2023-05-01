@@ -54,6 +54,7 @@ require("lazy").setup({
   'shortcuts/no-neck-pain.nvim',
 
   -- Misc
+  'rktjmp/lush.nvim', -- colorscheme aid
   'm4xshen/hardtime.nvim',
   'SirVer/ultisnips',
   'neoclide/jsonc.vim',   -- Syntax higlighting
