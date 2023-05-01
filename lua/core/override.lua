@@ -1,12 +1,10 @@
-require("solarized"):setup({
-  config = {
-    theme = 'neovim'
-  }
-})
-
 -- fg is the text color and bg is bg color
-local colorscheme = G.colors_name
-if colorscheme == "solarized" then
+if Theme == "solarized" then
+  require("solarized"):setup({
+    config = {
+      theme = 'neovim'
+    }
+  })
 
   -- Statusline
   --
@@ -23,4 +21,6 @@ if colorscheme == "solarized" then
   -- The active and inactive colors of tabs repsectively
   Hl("TabLineSel", { fg = "#002b36", bg = "#859900" })
   Hl("TabLine", { fg = "#859900", bg = "#002b36" })
+elseif Theme == "cutie" then
+  Cmd("colorscheme cutie")
 end

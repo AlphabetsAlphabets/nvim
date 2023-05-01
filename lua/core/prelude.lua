@@ -55,6 +55,7 @@ require("lazy").setup({
 
   -- Misc
   'rktjmp/lush.nvim', -- colorscheme aid
+  'rktjmp/shipwright.nvim', -- used with Lush
   'm4xshen/hardtime.nvim',
   'SirVer/ultisnips',
   'neoclide/jsonc.vim',   -- Syntax higlighting

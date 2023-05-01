@@ -1,6 +1,6 @@
----@diagnostic disable: undefined-global
-O.background = 'dark'
-G.colors_name = 'cutie'
+-- You probably always want to set this in your vim file
+vim.opt.background = 'dark'
+vim.g.colors_name = 'cutie'
 
--- https://coolors.co/1e0040-ca2e55-ffe0b5-777da7
-require('lush')(require('color'))
+-- include our theme file and pass it to lush to apply
+require('lush')(require('lush_theme.cutie'))
