@@ -23,4 +23,6 @@ if Theme == "solarized" then
   Hl("TabLine", { fg = "#859900", bg = "#002b36" })
 elseif Theme == "cutie" then
   Cmd("colorscheme cutie")
+else
+  Cmd("colorscheme " .. Theme)
 end
