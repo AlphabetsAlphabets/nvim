@@ -14,7 +14,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  -- Themes
   'maxmx03/solarized.nvim',
+  'shaunsingh/nord.nvim',
 
   -- Telescope
   'nvim-lua/popup.nvim',
@@ -54,6 +56,7 @@ require("lazy").setup({
   'shortcuts/no-neck-pain.nvim',
 
   -- Misc
+  'nvim-treesitter/nvim-treesitter',
   'rktjmp/lush.nvim', -- colorscheme aid
   'rktjmp/shipwright.nvim', -- used with Lush
   'm4xshen/hardtime.nvim',
