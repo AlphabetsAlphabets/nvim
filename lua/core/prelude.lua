@@ -24,7 +24,7 @@ require("lazy").setup({
   'nvim-telescope/telescope.nvim',
   'kyazdani42/nvim-web-devicons',
   'stevearc/oil.nvim',
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  -- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
   -- Git integration
   'pwntester/octo.nvim',
