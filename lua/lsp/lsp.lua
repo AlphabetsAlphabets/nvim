@@ -1,7 +1,7 @@
 local lspconfig = require("lspconfig")
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local servers = { "ccls", "rust_analyzer", "pyright", "lua_ls", "hls", "gopls" }
+local servers = { "ccls", "rust_analyzer", "pyright", "lua_ls", "hls" }
 
 local border = {
   { "╭", "FloatBorder" },
@@ -35,23 +35,98 @@ local function rename()
   local cword = vim.fn.expand('<cword>')
   local buf = vim.api.nvim_create_buf(false, true)
   local win = vim.api.nvim_open_win(buf, true, opts)
-  local fmt =  '<cmd>lua Rename.dorename(%d)<CR>'
+  local fmt = '<cmd>lua Rename.dorename(%d)<CR>'
 
-  vim.api.nvim_buf_set_lines(buf, 0, -1, false, {cword})
-  vim.api.nvim_buf_set_keymap(buf, 'i', '<CR>', string.format(fmt, win) .. "<ESC>l", {silent=true})
-  vim.api.nvim_buf_set_keymap(buf, 'i', '<C-c>', "<cmd>q<CR><Esc>w", {silent=true})
-  vim.api.nvim_buf_set_keymap(buf, 'n', '<C-c>', "<cmd>q<CR><Esc>w", {silent=true})
-
-  local twotwenty = 20
-  local z = twotwenty + 2
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, { cword })
+  vim.api.nvim_buf_set_keymap(buf, 'i', '<CR>', string.format(fmt, win) .. "<ESC>l", { silent = true })
+  vim.api.nvim_buf_set_keymap(buf, 'i', '<C-c>', "<cmd>q<CR><Esc>w", { silent = true })
+  vim.api.nvim_buf_set_keymap(buf, 'n', '<C-c>', "<cmd>q<CR><Esc>w", { silent = true })
 end
 
 _G.Rename = {
-   rename = rename,
-   dorename = dorename
+  rename = rename,
+  dorename = dorename
 }
 
 local on_attach = function(client, bufnr)
+  -- This is to fix this issue https://github.com/OmniSharp/omnisharp-roslyn/issues/2483#issuecomment-1364720374
+  if client.name == "omnisharp" then
+    client.server_capabilities.semanticTokensProvider = {
+      full = vim.empty_dict(),
+      legend = {
+        tokenModifiers = { "static_symbol" },
+        tokenTypes = {
+          "comment",
+          "excluded_code",
+          "identifier",
+          "keyword",
+          "keyword_control",
+          "number",
+          "operator",
+          "operator_overloaded",
+          "preprocessor_keyword",
+          "string",
+          "whitespace",
+          "text",
+          "static_symbol",
+          "preprocessor_text",
+          "punctuation",
+          "string_verbatim",
+          "string_escape_character",
+          "class_name",
+          "delegate_name",
+          "enum_name",
+          "interface_name",
+          "module_name",
+          "struct_name",
+          "type_parameter_name",
+          "field_name",
+          "enum_member_name",
+          "constant_name",
+          "local_name",
+          "parameter_name",
+          "method_name",
+          "extension_method_name",
+          "property_name",
+          "event_name",
+          "namespace_name",
+          "label_name",
+          "xml_doc_comment_attribute_name",
+          "xml_doc_comment_attribute_quotes",
+          "xml_doc_comment_attribute_value",
+          "xml_doc_comment_cdata_section",
+          "xml_doc_comment_comment",
+          "xml_doc_comment_delimiter",
+          "xml_doc_comment_entity_reference",
+          "xml_doc_comment_name",
+          "xml_doc_comment_processing_instruction",
+          "xml_doc_comment_text",
+          "xml_literal_attribute_name",
+          "xml_literal_attribute_quotes",
+          "xml_literal_attribute_value",
+          "xml_literal_cdata_section",
+          "xml_literal_comment",
+          "xml_literal_delimiter",
+          "xml_literal_embedded_expression",
+          "xml_literal_entity_reference",
+          "xml_literal_name",
+          "xml_literal_processing_instruction",
+          "xml_literal_text",
+          "regex_comment",
+          "regex_character_class",
+          "regex_anchor",
+          "regex_quantifier",
+          "regex_grouping",
+          "regex_alternation",
+          "regex_text",
+          "regex_self_escaped_character",
+          "regex_other_escape",
+        },
+      },
+      range = true,
+    }
+  end
+
   local lsp = vim.lsp
 
   local diag_opts = {
@@ -89,10 +164,22 @@ local handlers = {
   ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
 }
 
+local os = vim.loop.os_uname().sysname
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     handlers = handlers,
     on_attach = on_attach,
     capabilities = capabilities,
+  }
+end
+
+if os == "Windows_NT" then
+  local omnisharp_bin = "C:\\Users\\yapji\\lsp\\omnisharp\\OmniSharp.dll"
+
+  lspconfig.omnisharp.setup {
+    on_attach = on_attach,
+    handlers = handlers,
+    capabilities = capabilities,
+    cmd = { "dotnet", omnisharp_bin },
   }
 end
