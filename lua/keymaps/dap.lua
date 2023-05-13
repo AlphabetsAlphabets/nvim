@@ -2,9 +2,9 @@ local dap = require("dap")
 
 Map("n", "<F1>", dap.continue)
 Map("n", "<leader>dx", dap.terminate)
-Map("n", "<F9>", dap.step_into)
-Map("n", "<F10>", dap.step_over)
-Map("n", "<F11>", dap.step_out)
+Map("n", "<F10>", dap.step_into)
+Map("n", "<F11>", dap.step_over)
+Map("n", "<F7>", dap.step_out)
 
 Map("n", "<leader>k", function()
 	require("dap.ui.widgets").hover()
@@ -26,6 +26,6 @@ Map("n", "<leader>ds", function()
 end)
 
 Map("n", "<A-b>", dap.toggle_breakpoint)
-Map("n", "<leader>cab", dap.clear_breakpoints)
+Map("n", "<leader>fab", dap.clear_breakpoints)
 
 Map("n", "<leader>ro", dap.repl.open)

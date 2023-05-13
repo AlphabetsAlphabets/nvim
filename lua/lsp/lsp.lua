@@ -80,7 +80,7 @@ local on_attach = function(client, bufnr)
   Map("n", "]d", vim.diagnostic.goto_prev)
 
   Map("n", "<leader>e", lsp.buf.format)
-  Map("n", "<leader>ca", lsp.buf.code_action)
+  Map("n", "<leader>lca", lsp.buf.code_action)
 end
 
 -- LSP settings (for overriding per client)
