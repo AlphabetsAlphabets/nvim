@@ -16,29 +16,35 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- Themes
   'maxmx03/solarized.nvim',
-  'shaunsingh/nord.nvim',
 
   -- Telescope
-  'nvim-lua/popup.nvim',
-  'nvim-lua/plenary.nvim',
-  'nvim-telescope/telescope.nvim',
+  {
+    'nvim-telescope/telescope.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+    }
+  },
+
+  -- 'nvim-lua/popup.nvim',
   'kyazdani42/nvim-web-devicons',
   'stevearc/oil.nvim',
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  -- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
   -- Git integration
   'pwntester/octo.nvim',
   'lewis6991/gitsigns.nvim',
   'tpope/vim-fugitive',
 
-  -- LSP
+  -- -- LSP
   -- Must haves
   'neovim/nvim-lspconfig',
   "folke/trouble.nvim",
   'hrsh7th/nvim-cmp', -- completion
   'filipdutescu/renamer.nvim',
   'quangnguyen30192/cmp-nvim-ultisnips',
-  --- Completion sources
+
+  -- Completion sources
   'hrsh7th/cmp-nvim-lsp',
   "hrsh7th/cmp-nvim-lsp-signature-help",
   'petertriho/cmp-git',
@@ -53,34 +59,14 @@ require("lazy").setup({
   'theHamsta/nvim-dap-virtual-text',
   'rcarriga/nvim-dap-ui',
   'simrat39/rust-tools.nvim',
-  'shortcuts/no-neck-pain.nvim',
 
   -- Misc
   'nvim-treesitter/nvim-treesitter',
-  'rktjmp/lush.nvim', -- colorscheme aid
+  'rktjmp/lush.nvim',       -- colorscheme aid
   'rktjmp/shipwright.nvim', -- used with Lush
   'm4xshen/hardtime.nvim',
   'SirVer/ultisnips',
+  'shortcuts/no-neck-pain.nvim',
   'neoclide/jsonc.vim',   -- Syntax higlighting
   'tpope/vim-commentary', -- Bulk commenting
-  {
-    'nvimdev/dashboard-nvim',
-    event = 'VimEnter',
-    config = function()
-      local opts = require("plugins.dashboard")
-      require("dashboard").setup { -- Start up screen
-        theme = 'doom',
-        hide = { statusline = true },
-        config = {
-          header = opts.header,
-          footer = { opts.footer },
-          center = {
-            {
-              desc = '',
-            },
-          },
-        }
-      }
-    end,
-  },
 })

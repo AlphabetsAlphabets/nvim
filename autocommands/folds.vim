@@ -1,4 +1,3 @@
-Cmd([[
 augroup SaveFoldsWhenWriting
     autocmd!
     autocmd BufWritePost * mkview
@@ -13,4 +12,3 @@ augroup LoadFoldOnStartup
   autocmd!
   autocmd BufWinEnter * silent! loadview
 augroup end
-]])

@@ -1,6 +1,3 @@
--- Color scheme configure overrides at lua/core/override.lua
--- Cmd("colorscheme " .. Theme)
-
 -- Statusline
 O.statusline = "%l:%c/%L (%p%%) %=%f"
 
@@ -8,13 +5,13 @@ O.statusline = "%l:%c/%L (%p%%) %=%f"
 Cmd("filetype plugin indent on")
 
 -- Netrw
--- Uncommenting these two will disable netrw suitable 
+-- Uncommenting these two will disable netrw
 -- when a filebrowsing plugin is used.
-G.loaded_netrw = 1
-G.loaded_netrwPlugin = 1
-G.netrw_banner = 0
-G.netrw_liststyle = 3
-G.netrw_bufsettings = "nu rnu"
+-- G.loaded_netrw = 1
+-- G.loaded_netrwPlugin = 1
+-- G.netrw_banner = 0
+-- G.netrw_liststyle = 3
+-- G.netrw_bufsettings = "nu rnu"
 
 -- By default searches are case insensitive unless an uppercase is
 -- included in the search. This is annoying so this makes all searches
@@ -26,18 +23,17 @@ O.ignorecase = true
 --
 -- If changes are made to hidden buffers and they are unsaved.
 -- Setting this to true will ask if you want to save changes.
-O.hidden = true
+-- O.hidden = true
 -- If for some reason power is cut or lost, unsaved changes are not lost.
 -- The help file says to not use for big files
-O.swapfile = true
+-- O.swapfile = false
 
 -- Removes <ENTER> to continue prompts
 O.shortmess = 'c'
 
 -- Stops the beeping sound when an error occurs
-O.visualbell = true
-O.errorbells = false
-
+-- O.visualbell = true
+-- O.errorbells = false
 
 -- Leader key
 Map("n", "<SPACE>", "<Nop>", {})

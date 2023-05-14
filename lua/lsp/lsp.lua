@@ -164,7 +164,6 @@ local handlers = {
   ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
 }
 
-local os = vim.loop.os_uname().sysname
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     handlers = handlers,
@@ -173,7 +172,7 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-if os == "Windows_NT" then
+if OS == "Windows_NT" then
   local omnisharp_bin = "C:\\Users\\yapji\\lsp\\omnisharp\\OmniSharp.dll"
 
   lspconfig.omnisharp.setup {

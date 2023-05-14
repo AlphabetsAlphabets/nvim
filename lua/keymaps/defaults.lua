@@ -4,7 +4,7 @@ Cmd([[ nnoremap <expr> j (v:count >= 5 ? "m'" . v:count : "") . 'j' ]])
 -- Misc
 Map("n", "<Space>", "<Nop>", {})
 Map("n", "<C-c>", "<cmd>nohl<CR>", {})
-Map("n", "<leader>z", "<cmd>NoNeckPain<CR>", {})
+-- Map("n", "<leader>z", "<cmd>NoNeckPain<CR>", {})
 Map("n", "<leader><leader>x", ":wa | so %<CR>", {})
 
 -- Windows

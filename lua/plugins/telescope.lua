@@ -43,7 +43,7 @@ local opts = {
 
 
 -- Extensions
-if vim.loop.os_uname().sysname == "Linux" then
+if OS == "Linux" then
   require("telescope").load_extension("fzf")
   opts.extensions["fzf"] = {
     fuzzy = true,                     -- false will only do exact matching
