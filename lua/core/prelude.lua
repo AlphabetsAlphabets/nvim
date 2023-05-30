@@ -52,7 +52,6 @@ require("lazy").setup({
   -- LSP tools
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
-  "VidocqH/lsp-lens.nvim",
 
   -- Debugging
   'mfussenegger/nvim-dap',
@@ -64,7 +63,6 @@ require("lazy").setup({
   'nvim-treesitter/nvim-treesitter',
   'rktjmp/lush.nvim',       -- colorscheme aid
   'rktjmp/shipwright.nvim', -- used with Lush
-  'm4xshen/hardtime.nvim',
   'SirVer/ultisnips',
   'shortcuts/no-neck-pain.nvim',
   'neoclide/jsonc.vim',   -- Syntax higlighting
