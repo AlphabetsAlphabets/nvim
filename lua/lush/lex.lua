@@ -1,6 +1,13 @@
 local lush = require('lush')
 local hsl = lush.hsl
 
+local background = hsl("#000000")
+local comment = hsl("#DBC7BE")
+local white = hsl("#FFFFFF")
+local red = hsl("#E65F5C")
+local orange = hsl("#E5A51C")
+local green = hsl("#CDFFCD")
+
 -- https://coolors.co/000000-38aecc-0090c1-046e8f-705d56
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
@@ -9,13 +16,13 @@ local hsl = lush.hsl
 local theme = lush(function(injected_functions)
   local sym = injected_functions.sym
   return {
-    Normal       { }, -- Normal text
-    NormalFloat  { }, -- Normal text in floating windows.
+    Normal { fg = white, bg = background }, -- Normal text
+    NormalFloat { Normal },                        -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
-    Pmenu        { }, -- Popup menu: Normal item.
-    PmenuSel     { Normal, gui="reverse" }, -- Popup menu: Selected item.
-    PmenuSbar    { }, -- Popup menu: Scrollbar.
-    PmenuThumb   { }, -- Popup menu: Thumb of the scrollbar.
+    Pmenu { Normal },                              -- Popup menu: Normal item.
+    PmenuSel { Normal , gui = "reverse" },  -- Popup menu: Selected item.
+    PmenuSbar {},                          -- Popup menu: Scrollbar.
+    PmenuThumb {},                         -- Popup menu: Thumb of the scrollbar.
 
     -- ColorColumn  { }, -- Columns set with 'colorcolumn'
     -- Conceal      { }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
@@ -25,25 +32,25 @@ local theme = lush(function(injected_functions)
     -- CursorColumn { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     -- CursorLine   { }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
     -- Directory    { }, -- Directory names (and other special names in listings)
-    -- DiffAdd      { }, -- Diff mode: Added line |diff.txt|
-    -- DiffChange   { }, -- Diff mode: Changed line |diff.txt|
-    -- DiffDelete   { }, -- Diff mode: Deleted line |diff.txt|
-    -- DiffText     { }, -- Diff mode: Changed text within a changed line |diff.txt|
+    DiffAdd { gui = "bold", bg = background, fg = green },       -- Diff mode: Added line |diff.txt|
+    DiffChange { gui = "bold", bg = background, fg = orange }, -- Diff mode: Changed line |diff.txt|
+    DiffDelete { gui = "bold", bg = background, fg = red }, -- Diff mode: Deleted line |diff.txt|
+    DiffText { gui = "bold", bg = background, fg = orange },     -- Diff mode: Changed text within a changed line |diff.txt|
     -- EndOfBuffer  { }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- Cursor in a focused terminal
     -- TermCursorNC { }, -- Cursor in an unfocused terminal
     -- ErrorMsg     { }, -- Error messages on the command line
     -- VertSplit    { }, -- Column separating vertically split windows
-    
-    Folded       { }, -- Line used for closed folds
-    FoldColumn   { }, -- 'foldcolumn'
-    SignColumn   { Normal, gui="reverse" }, -- Column where |signs| are displayed
-    
-    -- IncSearch    { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+
+    Folded {},                             -- Line used for closed folds
+    FoldColumn {},                         -- 'foldcolumn'
+    SignColumn { bg = background },        -- Column where |signs| are displayed
+
+    IncSearch { Normal, gui = "reverse" }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
-    -- LineNr       { }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    -- CursorLineNr { }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    -- MatchParen   { }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    LineNr       { fg=white }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    -- CursorLineNr { fg=green }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    MatchParen { DiffDelete },    -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     -- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgArea      { }, -- Area for messages and cmdline
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
@@ -57,11 +64,11 @@ local theme = lush(function(injected_functions)
     -- SpellCap     { }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     -- SpellLocal   { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     -- SpellRare    { }, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
-    -- StatusLine   { }, -- Status line of current window
-    -- StatusLineNC { }, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    -- TabLine      { }, -- Tab pages line, not active tab page label
-    -- TabLineFill  { }, -- Tab pages line, where there are no labels
-    -- TabLineSel   { }, -- Tab pages line, active tab page label
+    StatusLine { bg = white.darken(90), fg = green, gui = "bold" }, -- Status line of current window
+    StatusLineNC { Normal },                                 -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    TabLine {},                                              -- Tab pages line, not active tab page label
+    TabLineFill { DiffDelete },                              -- Tab pages line, where there are no labels
+    TabLineSel { DiffAdd },                                  -- Tab pages line, active tab page label
     -- Title        { }, -- Titles for output from ":set all", ":autocmd" etc.
     -- Visual       { }, -- Visual mode selection
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
@@ -78,7 +85,7 @@ local theme = lush(function(injected_functions)
     --
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    -- Comment        { }, -- Any comment
+    Comment { bg = background, fg = comment },    -- Any comment
 
     -- Constant       { }, -- (*) Any constant
     -- String         { }, --   A string constant: "this is a string"
@@ -104,7 +111,7 @@ local theme = lush(function(injected_functions)
     -- Macro          { }, --   Same as Define
     -- PreCondit      { }, --   Preprocessor #if, #else, #endif, etc.
 
-    -- Type           { }, -- (*) int, long, char, etc.
+    Type           { fg=hsl("#B7B7F5") }, -- (*) int, long, char, etc.
     -- StorageClass   { }, --   static, register, volatile, etc.
     -- Structure      { }, --   struct, union, enum, etc.
     -- Typedef        { }, --   A typedef

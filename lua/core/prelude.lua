@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- Themes
   'maxmx03/solarized.nvim',
+  'NTBBloodbath/sweetie.nvim',
 
   -- Telescope
   {
@@ -29,12 +30,13 @@ require("lazy").setup({
   -- 'nvim-lua/popup.nvim',
   'kyazdani42/nvim-web-devicons',
   'stevearc/oil.nvim',
-  -- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
   -- Git integration
   'pwntester/octo.nvim',
   'lewis6991/gitsigns.nvim',
   'tpope/vim-fugitive',
+  'sindrets/diffview.nvim',
 
   -- -- LSP
   -- Must haves
