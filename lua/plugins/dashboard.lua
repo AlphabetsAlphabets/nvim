@@ -118,8 +118,8 @@ local art = {
 local quotes = {
   "Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.",
   "If my friends are olive oil, then I'm extra virgin.",
-  "When nothing is going right, go left.",
-  "You are killed when you die.",
+  "Friend: The right girl is just around the corner. Me: The Earth is round there are no corners.",
+  "When nothing is going right, go left.", "You are killed when you die.",
   "The four keys to success is SUCE.",
   "Don't be so humble, you are not that great.",
   "If you ran like your mouth, you'd be in good shape.",

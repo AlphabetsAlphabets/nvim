@@ -11,11 +11,14 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- Themes
   'maxmx03/solarized.nvim',
+  'sainnhe/everforest',
+  'shaunsingh/nord.nvim',
   'NTBBloodbath/sweetie.nvim',
 
   -- Telescope
@@ -44,7 +47,12 @@ require("lazy").setup({
   "folke/trouble.nvim",
   'hrsh7th/nvim-cmp', -- completion
   'filipdutescu/renamer.nvim',
-  'quangnguyen30192/cmp-nvim-ultisnips',
+
+  -- Latex
+  'L3MON4D3/LuaSnip',
+  'saadparwaiz1/cmp_luasnip',
+  'iurimateus/luasnip-latex-snippets.nvim',
+  'latex-lsp/texlab',
 
   -- Completion sources
   'hrsh7th/cmp-nvim-lsp',
@@ -62,11 +70,31 @@ require("lazy").setup({
   'simrat39/rust-tools.nvim',
 
   -- Misc
+  'lervag/vimtex',
   'nvim-treesitter/nvim-treesitter',
   'rktjmp/lush.nvim',       -- colorscheme aid
   'rktjmp/shipwright.nvim', -- used with Lush
-  'SirVer/ultisnips',
   'shortcuts/no-neck-pain.nvim',
-  'neoclide/jsonc.vim',   -- Syntax higlighting
-  'tpope/vim-commentary', -- Bulk commenting
+  'neoclide/jsonc.vim',     -- Syntax higlighting
+  'tpope/vim-commentary',   -- Bulk commenting
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      local opts = require("plugins.dashboard")
+      require("dashboard").setup { -- Start up screen
+        theme = 'doom',
+        hide = { statusline = true },
+        config = {
+          header = opts.header,
+          footer = { opts.footer },
+          center = {
+            {
+              desc = '',
+            },
+          },
+        }
+      }
+    end,
+  },
 })

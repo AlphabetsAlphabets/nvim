@@ -26,7 +26,7 @@ if theme == "solarized" then
 elseif theme == "nord" then
   Cmd("colorscheme " .. theme)
 
-  Hl("StatusLine", { fg="#000000", bg ="#d8dee9" })
+  Hl("StatusLine", { fg = "#000000", bg = "#d8dee9" })
 else
   Cmd("colorscheme " .. theme)
 end

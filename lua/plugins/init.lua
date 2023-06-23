@@ -1,4 +1,5 @@
 require("plugins.octo")
+require("plugins.vimtex")
 require("plugins.gitsigns")
 require("plugins.treesitter")
 require("plugins.dap")
