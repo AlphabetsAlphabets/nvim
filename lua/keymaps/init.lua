@@ -1,4 +1,5 @@
 require("keymaps.defaults")
+require("keymaps.hydras.init")
 
 require("keymaps.fugitive")
 require("keymaps.octo")

@@ -39,6 +39,7 @@ require("lazy").setup({
   'pwntester/octo.nvim',
   'lewis6991/gitsigns.nvim',
   'tpope/vim-fugitive',
+  'TimUntersberger/neogit',
   'sindrets/diffview.nvim',
 
   -- -- LSP
@@ -69,11 +70,12 @@ require("lazy").setup({
   'rcarriga/nvim-dap-ui',
   'simrat39/rust-tools.nvim',
 
+  -- Must haves
+  'anuvyklack/hydra.nvim',
+  'nvim-treesitter/nvim-treesitter',
+
   -- Misc
   'lervag/vimtex',
-  'nvim-treesitter/nvim-treesitter',
-  'rktjmp/lush.nvim',       -- colorscheme aid
-  'rktjmp/shipwright.nvim', -- used with Lush
   'shortcuts/no-neck-pain.nvim',
   'neoclide/jsonc.vim',     -- Syntax higlighting
   'tpope/vim-commentary',   -- Bulk commenting

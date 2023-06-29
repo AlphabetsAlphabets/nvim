@@ -1,8 +1,13 @@
-require("plugins.octo")
 require("plugins.vimtex")
-require("plugins.gitsigns")
 require("plugins.treesitter")
-require("plugins.dap")
-require("plugins.telescope")
 require("plugins.no-neck-pain")
-require("plugins.oil")
+
+require("plugins.file-management.telescope")
+require("plugins.file-management.oil")
+
+require("plugins.debugging.dap")
+-- require("plugins.debugging.gdb")
+
+require("plugins.git.gitsigns")
+require("plugins.git.neogit")
+require("plugins.git.octo")
