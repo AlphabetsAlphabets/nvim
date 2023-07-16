@@ -8,6 +8,7 @@ require("plugins.file-management.oil")
 require("plugins.debugging.dap")
 -- require("plugins.debugging.gdb")
 
+require("plugins.neorg-config")
 require("plugins.git.gitsigns")
 require("plugins.git.neogit")
 require("plugins.git.octo")

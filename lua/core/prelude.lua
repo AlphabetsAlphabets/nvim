@@ -22,18 +22,13 @@ require("lazy").setup({
   'NTBBloodbath/sweetie.nvim',
 
   -- Telescope
-  {
-    'nvim-telescope/telescope.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
-    }
-  },
+  'nvim-lua/plenary.nvim',
+  'nvim-telescope/telescope.nvim',
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
   -- 'nvim-lua/popup.nvim',
   'kyazdani42/nvim-web-devicons',
   'stevearc/oil.nvim',
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
   -- Git integration
   'pwntester/octo.nvim',
@@ -74,11 +69,23 @@ require("lazy").setup({
   'anuvyklack/hydra.nvim',
   'nvim-treesitter/nvim-treesitter',
 
+  -- Neorg
+  {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      local opts = require("plugins.neorg-config")
+      require("neorg").setup { load = opts }
+    end
+  },
+  'nvim-neorg/neorg-telescope',
+
   -- Misc
   'lervag/vimtex',
   'shortcuts/no-neck-pain.nvim',
-  'neoclide/jsonc.vim',     -- Syntax higlighting
-  'tpope/vim-commentary',   -- Bulk commenting
+  'neoclide/jsonc.vim',   -- Syntax higlighting
+  'tpope/vim-commentary', -- Bulk commenting
   {
     'nvimdev/dashboard-nvim',
     event = 'VimEnter',
