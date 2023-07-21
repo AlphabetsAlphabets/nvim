@@ -8,6 +8,9 @@ local hint = [[
  Octo
  _li_: list issues    _ac_: add comment 
 
+ Gitsigns
+ _sh: stage hunks
+
  _<Enter>_: Neogit  _q_: exit
 ]]
 
@@ -29,6 +32,8 @@ Hydra({
 
     { "li", ":Octo issue list<CR>" },
     { "ac", ":Octo comment add<CR>" },
+
+    { "sh", ":Gitsigns stage_hunk<CR>" },
 
     { "<Enter>", ":Neogit<CR>",
       { desc = "Neogit" }

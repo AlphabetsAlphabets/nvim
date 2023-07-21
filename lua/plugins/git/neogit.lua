@@ -1,4 +1,6 @@
-require("neogit").setup()
+require("neogit").setup({
+  integrations = { diffview = true }
+})
 
 -- layout I want are
 -- {diff1_plain} Available for: merge_tool

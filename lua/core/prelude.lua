@@ -20,6 +20,7 @@ require("lazy").setup({
   'sainnhe/everforest',
   'shaunsingh/nord.nvim',
   'NTBBloodbath/sweetie.nvim',
+  { "ellisonleao/gruvbox.nvim",                 priority = 1000 },
 
   -- Telescope
   'nvim-lua/plenary.nvim',
@@ -76,7 +77,18 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       local opts = require("plugins.neorg-config")
-      require("neorg").setup { load = opts }
+      require("neorg").setup { load = {
+        ["core.defaults"] = {},  -- Loads default behaviour
+        ["core.concealer"] = {}, -- Adds pretty icons to your documents
+        ["core.dirman"] = {      -- Manages Neorg workspaces
+          config = {
+            workspaces = {
+              notes = "~/Documents/neorg/",
+            },
+            default_workspace = "notes"
+          },
+        },
+      } }
     end
   },
   'nvim-neorg/neorg-telescope',
@@ -106,4 +118,7 @@ require("lazy").setup({
       }
     end,
   },
+
+  -- my plugins
+  { name = "git-changes", dir = '/home/yjh/Documents/git-changes/', dev = true, enabled = true }
 })

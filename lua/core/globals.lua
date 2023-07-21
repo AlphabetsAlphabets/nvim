@@ -7,7 +7,7 @@ G = vim.g
 
 OS = vim.loop.os_uname().sysname
 
-Api.nvim_set_var("Theme", "nord")
+Api.nvim_set_var("Theme", "gruvbox")
 Hl = function(group, val)
   Api.nvim_set_hl(0, group, val)
 end

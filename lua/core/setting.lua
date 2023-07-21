@@ -1,5 +1,7 @@
 -- Statusline
 O.statusline = "%m %l:%c/%L (%p%%) %=%f"
+O.conceallevel = 3
+
 
 -- For VimTex
 Cmd("filetype plugin indent on")
