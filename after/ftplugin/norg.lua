@@ -1,9 +1,9 @@
-O.tabstop = 2
-O.scrolloff = 99
-O.softtabstop = 2
-O.shiftwidth = 2
-O.conceallevel = 2
-O.wrap = true
+vim.opt.tabstop = 2
+vim.opt.scrolloff = 99
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.conceallevel = 2
+vim.opt.wrap = true
 
-Map("n", "j", "gj", {})
-Map("n", "k", "gk", {})
+vim.keymap.set("n", "j", "gj", {})
+vim.keymap.set("n", "k", "gk", {})
