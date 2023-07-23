@@ -1,16 +1,31 @@
+local color = "light"
+
 return {
-    'maxmx03/solarized.nvim',
-    'sainnhe/everforest',
+  {
+    'NTBBloodbath/sweetie.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.o.bg = color
+      vim.cmd.colorscheme("gruvbox")
+      vim.cmd.colorscheme("sweetie")
+    end,
+  },
+  {
     'shaunsingh/nord.nvim',
-    { 
-        'NTBBloodbath/sweetie.nvim',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.cmd("set background=light")
-            vim.cmd("colorscheme gruvbox")
-            vim.cmd("colorscheme sweetie")
-        end,
-    },
-    { "ellisonleao/gruvbox.nvim",                 priority = 1000 },
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme("nord")
+    end,
+  },
+  {
+    "ellisonleao/gruvbox.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.o.bg = color
+      vim.cmd.colorscheme("gruvbox")
+    end,
+  },
 }

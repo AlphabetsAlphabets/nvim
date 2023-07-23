@@ -20,4 +20,5 @@ require("lazy").setup {
     require("themes"),
     require("lsp"),
     require("hydras"),
+    require("misc"), -- Useful stuff but idk which category to put it in
 }
