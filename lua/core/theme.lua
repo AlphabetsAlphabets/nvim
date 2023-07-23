@@ -27,6 +27,10 @@ elseif theme == "nord" then
   Cmd("colorscheme " .. theme)
 
   Hl("StatusLine", { fg = "#000000", bg = "#d8dee9" })
+elseif theme == "sweetie" then
+  Cmd("set background=light")
+  Cmd("colorscheme habamax")
+  Cmd("colorscheme " .. theme)
 else
   Cmd("colorscheme " .. theme)
 end

@@ -12,3 +12,6 @@ for _, file in ipairs(autocmd_files) do
   Cmd("source " .. autocommands .. file)
 end
 
+vim.cmd("set background=light")
+vim.cmd("colo gruvbox")
+vim.cmd("colo sweetie")
