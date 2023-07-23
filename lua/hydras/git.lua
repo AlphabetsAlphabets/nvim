@@ -9,7 +9,7 @@ local hint = [[
  _li_: list issues    _ac_: add comment 
 
  Gitsigns
- _sh: stage hunks
+ _sh_: stage hunks
 
  _<Enter>_: Neogit  _q_: exit
 ]]

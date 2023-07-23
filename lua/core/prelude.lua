@@ -19,8 +19,8 @@ require("lazy").setup({
   'maxmx03/solarized.nvim',
   'sainnhe/everforest',
   'shaunsingh/nord.nvim',
-  'NTBBloodbath/sweetie.nvim',
-  { "ellisonleao/gruvbox.nvim",                 priority = 1000 },
+  { 'NTBBloodbath/sweetie.nvim', priority = 1000 },
+  { "ellisonleao/gruvbox.nvim",  priority = 1000 },
 
   -- Telescope
   'nvim-lua/plenary.nvim',
@@ -120,5 +120,5 @@ require("lazy").setup({
   },
 
   -- my plugins
-  { name = "git-changes", dir = '/home/yjh/Documents/git-changes/', dev = true, enabled = true }
+  { name = "git-changes",                       dir = '/home/yjh/Documents/git-changes/', dev = true, enabled = true }
 })
