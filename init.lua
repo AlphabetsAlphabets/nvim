@@ -1,17 +1,23 @@
-require('core')
-require('plugins')
-require('keymaps')
-require('lsp')
+require("settings")
+require("keymaps")
 
-local autocmd_files = {
-  -- "folds.vim"
-}
-
-local autocommands = "/home/yjh/.config/nvim/autocommands/"
-for _, file in ipairs(autocmd_files) do 
-  Cmd("source " .. autocommands .. file)
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
+vim.opt.rtp:prepend(lazypath)
 
-vim.cmd("set background=light")
-vim.cmd("colo gruvbox")
-vim.cmd("colo sweetie")
+require("lazy").setup {
+    require("git"),
+    require("navigation"),
+    require("themes"),
+    require("lsp"),
+    require("hydras"),
+}
