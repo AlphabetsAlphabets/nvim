@@ -7,6 +7,9 @@ local debugging = {
 
 local lsp = {
   "nvim-treesitter/nvim-treesitter",
+  "filipdutescu/renamer.nvim",
+  "iurimateus/luasnip-latex-snippets.nvim",
+  "latex-lsp/texlab",
 
   {
     'L3MON4D3/LuaSnip',
@@ -19,15 +22,19 @@ local lsp = {
       "neovim/nvim-lspconfig",
     },
     config = function()
+      require("cmp_git").setup()
+
+      local cmp = require("cmp")
+      local luasnip = require("luasnip")
+      local lspconfig = require("lspconfig")
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
       local has_words_before = function()
         unpack = unpack or table.unpack
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
         return col ~= 0 and
-        vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+            vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
       end
-
-      local cmp = require("cmp")
-      local luasnip = require("luasnip")
 
       local mappings = {
         ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
@@ -79,11 +86,6 @@ local lsp = {
         sources = cmp.config.sources(sources),
       }
 
-      require("cmp_git").setup()
-
-      local lspconfig = require("lspconfig")
-
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local servers = { "ccls", "rust_analyzer", "pyright", "lua_ls", "hls" }
 
       local border = {
@@ -98,7 +100,7 @@ local lsp = {
       }
 
       -- Forgot where I got this. But it's from some reddit comment.
-      local function dorename(win)
+      local function do_rename(win)
         local new_name = vim.trim(vim.fn.getline('.'))
         vim.api.nvim_win_close(win, true)
         vim.lsp.buf.rename(new_name)
@@ -122,14 +124,14 @@ local lsp = {
 
         vim.api.nvim_buf_set_lines(buf, 0, -1, false, { cword })
         vim.api.nvim_buf_set_keymap(buf, 'i', '<CR>', string.format(fmt, win) .. "<ESC>l",
-        { silent = true })
+          { silent = true })
         vim.api.nvim_buf_set_keymap(buf, 'i', '<C-c>', "<cmd>q<CR><Esc>w", { silent = true })
         vim.api.nvim_buf_set_keymap(buf, 'n', '<C-c>', "<cmd>q<CR><Esc>w", { silent = true })
       end
 
       _G.Rename = {
         rename = rename,
-        dorename = dorename
+        dorename = do_rename
       }
 
       local on_attach = function(client, bufnr)
@@ -182,7 +184,11 @@ local lsp = {
 
   {
     "williamboman/mason-lspconfig.nvim",
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
     config = function()
+      require("mason").setup()
       require("mason-lspconfig").setup {
         ensure_installed = {
           "lua_ls",
@@ -190,17 +196,8 @@ local lsp = {
         },
       }
     end,
-    dependencies = {
-      {
-        "williamboman/mason.nvim",
-        config = function()
-          require("mason").setup()
-        end
-      }
-    }
   },
 
-  "filipdutescu/renamer.nvim",
   {
     "folke/trouble.nvim",
     keys = {
@@ -215,9 +212,6 @@ local lsp = {
       require("trouble").setup({ icons = false })
     end
   },
-
-  "iurimateus/luasnip-latex-snippets.nvim",
-  "latex-lsp/texlab",
 }
 
 return {
