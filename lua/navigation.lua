@@ -23,7 +23,7 @@ local telescope = {
     local opts = {
       layout_strategy = "vertical",
       layout_config = {
-        -- preview_height = 0.725,
+        preview_height = 0.725,
         width = 0.55,
       },
 

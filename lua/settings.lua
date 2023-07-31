@@ -1,18 +1,10 @@
+vim.opt.conceallevel = 3
+
 -- Statusline
 vim.opt.statusline = "%m %l:%c/%L (%p%%) %=%f"
-vim.opt.conceallevel = 3
 
 -- For VimTex
 vim.cmd("filetype plugin indent on")
-
--- Netrw
--- Uncommenting these two will disable netrw
--- when a filebrowsing plugin is used.
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
--- vim.g.netrw_banner = 0
--- vim.g.netrw_liststyle = 3
--- vim.g.netrw_bufsettings = "nu rnu"
 
 -- By default searches are case insensitive unless an uppercase is
 -- included in the search. This is annoying so this makes all searches

@@ -8,6 +8,7 @@ return {
   },
   {
     'lewis6991/gitsigns.nvim',
+    event = "BufWinEnter",
     keys = {
       { "[c", "<cmd>lua require'gitsigns'.next_hunk()<CR>" },
       { "]c", "<cmd>lua require'gitsigns'.prev_hunk()<CR>" },
