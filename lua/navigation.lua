@@ -80,17 +80,20 @@ local telescope = {
 
 return {
   {
-    'nvim-telescope/telescope.nvim',
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'make',
     dependencies = {
+      {
+        'nvim-telescope/telescope.nvim',
+        keys = telescope.keys,
+      },
       'nvim-lua/plenary.nvim',
     },
-    keys = telescope.keys,
     config = function()
       local actions = require("telescope.actions")
       telescope.config(actions)
     end
   },
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', },
   {
     'stevearc/oil.nvim',
     keys = {

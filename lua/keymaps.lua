@@ -63,5 +63,3 @@ vim.keymap.set("n", "<C-q>", ":tabclose<cr>")
 vim.keymap.set("n", "<leader><leader>h", ":echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>")
 
 -- [[ DAP, debugging ]]
-
--- vim.keymap.set("n", "<leader>z", "<cmd>NoNeckPain<CR>")
