@@ -6,7 +6,6 @@ local debugging = {
 }
 
 local lsp = {
-  "nvim-treesitter/nvim-treesitter",
   "filipdutescu/renamer.nvim",
   "iurimateus/luasnip-latex-snippets.nvim",
   "latex-lsp/texlab",
