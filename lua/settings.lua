@@ -1,5 +1,3 @@
-vim.opt.conceallevel = 3
-
 -- Statusline
 vim.opt.statusline = "%m %l:%c/%L (%p%%) %=%f"
 

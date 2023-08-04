@@ -20,5 +20,5 @@ require("lazy").setup {
   require("themes"),
   require("lsp"),
   require("hydras"),
-  require("misc"),
+  require("writing"),
 }
