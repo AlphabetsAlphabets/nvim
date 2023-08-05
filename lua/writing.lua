@@ -61,7 +61,10 @@ return {
   {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-neorg/neorg-telescope"
+    },
     keys = {
       {
         "<LocalLeader>li",
@@ -91,6 +94,43 @@ return {
           },
         },
       }
+
+      local start = "Telescope neorg "
+      local neorg_callbacks = require("neorg.core.callbacks")
+      neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, keybinds)
+        -- Map all the below keybinds only when the "norg" mode is active
+        keybinds.map_event_to_mode("norg", {
+          n = { -- Bind keys in normal mode
+            {
+              "<LocalLeader>ff",
+              function()
+                vim.cmd(start .. "find_norg_files")
+              end
+            },
+            -- {
+            --   "<LocalLeader>fl",
+            --   function()
+            --     vim.cmd(start .. "find_linkable")
+            --   end
+            -- },
+            -- {
+            --   "<LocalLeader>ifl",
+            --   function()
+            --     vim.cmd(start .. "insert_file_link")
+            --   end
+            -- },
+            -- {
+            --   "<LocalLeader>il",
+            --   function()
+            --     vim.cmd(start .. "insert_link")
+            --   end
+            -- },
+          },
+        }, {
+          silent = true,
+          noremap = true,
+        })
+      end)
     end,
   }
 }

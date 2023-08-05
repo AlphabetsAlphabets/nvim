@@ -1,6 +1,7 @@
 local telescope = {
   keys = {
-    { "<leader>fd",  ":Telescope current_buffer_fuzzy_find<cr>", desc = "Search within current buffer." },
+    { "<leader>jl",  ":Telescope jumplist<cr>" },
+    { "<leader>fd",  ":Telescope current_buffer_fuzzy_find<cr>" },
     { "<leader>ht",  ":Telescope help_tags<cr>" },
     { "<leader>rg",  ":Telescope live_grep<cr>" },
     { "<leader>fb",  ":Telescope buffers<cr>" },
@@ -71,6 +72,8 @@ local telescope = {
         case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
       }
     end
+
+    require("telescope").load_extension("neorg")
 
     require('telescope').setup {
       defaults = opts

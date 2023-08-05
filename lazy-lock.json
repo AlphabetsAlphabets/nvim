@@ -16,6 +16,7 @@
   "mason.nvim": { "branch": "main", "commit": "fe9e34a9ab4d64321cdc3ecab4ea1809239bb73f" },
   "neogit": { "branch": "master", "commit": "38ca7a86e16f45ccfb7f2339686de4f4d5ce0fcc" },
   "neorg": { "branch": "main", "commit": "1c41592ec975189c79987aa32228778c111eb67f" },
+  "neorg-telescope": { "branch": "main", "commit": "d803ae41c40e3dfa2ac11a4956497436b101ce80" },
   "no-neck-pain.nvim": { "branch": "main", "commit": "6000e12d13188e008e9539085c24ff34794da40b" },
   "nord.nvim": { "branch": "master", "commit": "fab04b2dd4b64f4b1763b9250a8824d0b5194b8f" },
   "nvim-cmp": { "branch": "main", "commit": "c4e491a87eeacf0408902c32f031d802c7eafce8" },
