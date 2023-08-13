@@ -4,9 +4,9 @@ return {
     config = function()
       -- Change '<C-g>' here to any keycode you like.
       vim.keymap.set('i', '<A-i>', function() return vim.fn['codeium#Accept']() end, { expr = true })
-      vim.keymap.set('i', '<leader>j', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
-      vim.keymap.set('i', '<leader>k', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
-      vim.keymap.set('i', '<leader>cx', function() return vim.fn['codeium#Clear']() end, { expr = true })
+      vim.keymap.set('i', '<A-j>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+      vim.keymap.set('i', '<A-k>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+      vim.keymap.set('i', '<A-c>', function() return vim.fn['codeium#Clear']() end, { expr = true })
     end
   },
   {
