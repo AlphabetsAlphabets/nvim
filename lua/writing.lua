@@ -1,5 +1,15 @@
 return {
   {
+    "Exafunction/codeium.vim",
+    config = function()
+      -- Change '<C-g>' here to any keycode you like.
+      vim.keymap.set('i', '<A-i>', function() return vim.fn['codeium#Accept']() end, { expr = true })
+      vim.keymap.set('i', '<leader>j', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+      vim.keymap.set('i', '<leader>k', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+      vim.keymap.set('i', '<leader>cx', function() return vim.fn['codeium#Clear']() end, { expr = true })
+    end
+  },
+  {
     "shellRaining/hlchunk.nvim",
     event = "UIEnter",
     config = function()
@@ -45,18 +55,20 @@ return {
     lazy = false,
     version = "*",
     opts = {
-      width = 80,
+      width = 100,
       background = vim.g.colors_name,
 
       autocmds = {
         enableOnVimEnter = true,
         enableOnTabEnter = true,
         reloadOnColorSchemeChange = true,
+      },
+
+      mappings = {
+        enabled = true,
+        toggle = "<leader>z"
       }
     },
-    config = function()
-      vim.keymap.set("n", "<leader>z", function() vim.cmd("NoNeckPain") end)
-    end
   },
   {
     "nvim-neorg/neorg",
@@ -95,42 +107,21 @@ return {
         },
       }
 
-      local start = "Telescope neorg "
-      local neorg_callbacks = require("neorg.core.callbacks")
-      neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, keybinds)
-        -- Map all the below keybinds only when the "norg" mode is active
-        keybinds.map_event_to_mode("norg", {
-          n = { -- Bind keys in normal mode
-            {
-              "<LocalLeader>ff",
-              function()
-                vim.cmd(start .. "find_norg_files")
-              end
-            },
-            -- {
-            --   "<LocalLeader>fl",
-            --   function()
-            --     vim.cmd(start .. "find_linkable")
-            --   end
-            -- },
-            -- {
-            --   "<LocalLeader>ifl",
-            --   function()
-            --     vim.cmd(start .. "insert_file_link")
-            --   end
-            -- },
-            -- {
-            --   "<LocalLeader>il",
-            --   function()
-            --     vim.cmd(start .. "insert_link")
-            --   end
-            -- },
-          },
-        }, {
-          silent = true,
-          noremap = true,
-        })
-      end)
+      -- local neorg_callbacks = require("neorg.core.callbacks")
+
+      -- neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, keybinds)
+      --   -- Map all the below keybinds only when the "norg" mode is active
+      --   keybinds.map_event_to_mode("norg", {
+      --       n = {
+      --         { "<LocalLeader>ff", function() vim.cmd("Telescope neorg find_norg_files") end },
+      --       },
+      --     },
+      --     {
+      --       silent = true,
+      --       noremap = true,
+      --     }
+      --   )
+      -- end)
     end,
   }
 }
