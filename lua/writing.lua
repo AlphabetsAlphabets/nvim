@@ -52,7 +52,7 @@ return {
   "tpope/vim-commentary",
   {
     "shortcuts/no-neck-pain.nvim",
-    lazy = false,
+    lazy = true,
     version = "*",
     opts = {
       width = 100,
@@ -62,6 +62,12 @@ return {
         enableOnVimEnter = true,
         enableOnTabEnter = true,
         reloadOnColorSchemeChange = true,
+      },
+
+      buffers = {
+        right = {
+          enabled = false,
+        },
       },
 
       mappings = {
@@ -106,22 +112,6 @@ return {
           },
         },
       }
-
-      -- local neorg_callbacks = require("neorg.core.callbacks")
-
-      -- neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, keybinds)
-      --   -- Map all the below keybinds only when the "norg" mode is active
-      --   keybinds.map_event_to_mode("norg", {
-      --       n = {
-      --         { "<LocalLeader>ff", function() vim.cmd("Telescope neorg find_norg_files") end },
-      --       },
-      --     },
-      --     {
-      --       silent = true,
-      --       noremap = true,
-      --     }
-      --   )
-      -- end)
     end,
   }
 }

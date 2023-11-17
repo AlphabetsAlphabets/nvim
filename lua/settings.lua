@@ -14,10 +14,10 @@ vim.opt.ignorecase = true
 --
 -- If changes are made to hidden buffers and they are unsaved.
 -- Setting this to true will ask if you want to save changes.
--- vim.opt.hidden = true
+vim.opt.hidden = true
 -- If for some reason power is cut or lost, unsaved changes are not lost.
 -- The help file says to not use for big files
--- vim.opt.swapfile = false
+vim.opt.swapfile = false
 
 -- Removes <ENTER> to continue prompts
 vim.opt.shortmess = 'c'
