@@ -7,11 +7,6 @@ vim.keymap.set("n", "<C-c>", "<cmd>nohl<CR>")
 vim.keymap.set("n", "<leader><leader>x", ":wa | so %<CR>")
 
 -- Windows
---- Window navigation
-vim.keymap.set("n", "<A-w>cw", ":close<CR>")    -- Close floating windows
-vim.keymap.set("n", "<A-w>cq", ":q<CR>")
-vim.keymap.set("n", "<A-w>ct", ":tabclose<CR>") -- Close tab
-vim.keymap.set("n", "<A-w>fw", ":on<CR>")
 vim.keymap.set("n", "<A-a>", "<C-w>h")
 vim.keymap.set("n", "<A-s>", "<C-w>j")
 vim.keymap.set("n", "<A-w>", "<C-w>k")
@@ -59,7 +54,6 @@ vim.keymap.set("n", "<C-w>n", ":tabnew<cr>")
 
 vim.keymap.set("n", "<C-k>", ":tabprevious<cr>")
 vim.keymap.set("n", "<C-j>", ":tabnext<cr>")
-vim.keymap.set("n", "<C-q>", ":tabclose<cr>")
 
 vim.keymap.set("n", "<leader><leader>h", ":echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>")
 
