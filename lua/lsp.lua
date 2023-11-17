@@ -7,8 +7,19 @@ local debugging = {
 
 local lsp = {
   "filipdutescu/renamer.nvim",
-  "iurimateus/luasnip-latex-snippets.nvim",
-  "latex-lsp/texlab",
+  {
+    "nvimtools/none-ls.nvim",
+    ft = { "python" },
+    opts = function()
+      local null_ls = require("null-ls")
+      return {
+        sources = {
+          null_ls.builtins.diagnostics.ruff,
+          null_ls.builtins.formatting.black,
+        }
+      }
+    end,
+  },
 
   {
     'L3MON4D3/LuaSnip',
@@ -85,8 +96,6 @@ local lsp = {
         sources = cmp.config.sources(sources),
       }
 
-      local servers = { "ccls", "rust_analyzer", "pyright", "lua_ls", "hls" }
-
       local border = {
         { "╭", "FloatBorder" },
         { "─", "FloatBorder" },
@@ -135,7 +144,6 @@ local lsp = {
 
       local on_attach = function(client, bufnr)
         local lsp = vim.lsp
-
         local diag_opts = {
           float = {
             border = 'rounded',
@@ -171,6 +179,7 @@ local lsp = {
         ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
       }
 
+      local servers = { "rust_analyzer", "pyright", "lua_ls", "clangd" }
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {
           handlers = handlers,
@@ -183,13 +192,22 @@ local lsp = {
 
   {
     "williamboman/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = {
+        "black",
+        "ruff",
+      }
+    },
     dependencies = {
       "williamboman/mason.nvim",
     },
     config = function()
       require("mason").setup()
+
       require("mason-lspconfig").setup {
         ensure_installed = {
+          "clangd",
+          "pyright",
           "lua_ls",
           "rust_analyzer",
         },
