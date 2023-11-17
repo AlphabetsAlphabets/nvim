@@ -1,9 +1,9 @@
-local color = "light"
+local color = "dark"
 
 return {
   {
     'NTBBloodbath/sweetie.nvim',
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       vim.o.bg = color
@@ -21,7 +21,7 @@ return {
   },
   {
     "ellisonleao/gruvbox.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     config = function()
       vim.o.bg = color
@@ -30,7 +30,7 @@ return {
   },
   {
     "NTBBloodbath/daylight.nvim",
-    lazy = false,
+    lazy = true,
     config = function()
       require("daylight").setup({
         day = {
