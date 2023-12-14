@@ -48,6 +48,10 @@ vim.keymap.set("n", "<A-k>", "<C-u>")
 vim.keymap.set("v", "<A-j>", "<C-d>")
 vim.keymap.set("v", "<A-k>", "<C-u>")
 
+-- Changelist mappings
+vim.keymap.set("n", "[[", "g;")
+vim.keymap.set("n", "]]", "g,")
+
 -- Project navigation
 vim.keymap.set("n", "<leader>tt", "<C-w>T")
 vim.keymap.set("n", "<C-w>n", ":tabnew<cr>")
