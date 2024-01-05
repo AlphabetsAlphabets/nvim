@@ -22,10 +22,10 @@ local telescope = {
   },
   config = function(actions)
     local opts = {
-      layout_strategy = "vertical",
+      layout_strategy = "center",
       layout_config = {
-        preview_height = 0.725,
-        width = 0.55,
+        --   -- preview_height = 0.725,
+        --   width = 0.55,
       },
 
       pickers = {
@@ -72,8 +72,6 @@ local telescope = {
         case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
       }
     end
-
-    require("telescope").load_extension("neorg")
 
     require('telescope').setup {
       defaults = opts

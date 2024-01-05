@@ -1,6 +1,7 @@
+-- Currently testing this
 -- The returned table is used by legendary.nvim config in qol.lua
+-- I'm not sure how to convert these into lua
 
--- I'm not sure what to do with these so I'll just leave them here.
 vim.cmd([[ nnoremap <expr> k (v:count >= 5 ? "m'" . v:count : "") . 'k' ]])
 vim.cmd([[ nnoremap <expr> j (v:count >= 5 ? "m'" . v:count : "") . 'j' ]])
 
@@ -34,6 +35,7 @@ local window_maps = {
   { mode = { "n" }, "<leader>,", "5<C-w><",      description = "", },
 }
 
+
 local quickfix_maps = {
   { mode = { "n" }, "[qc",        ":ccl<CR>",   description = "Closes the quickfix window", },
   { mode = { "n" }, "[qo",        ":copen<CR>", description = "Opens the quickfix window", },
@@ -64,31 +66,22 @@ local changelist_maps = {
   { mode = { "n" }, "]]", "g,", description = "To current entry in the changelist. ", },
 }
 
-local legendary_maps = {
-  { mode = { "n" }, "<leader>l", ":Legendary<CR>", description = "Open legendary.", },
-}
-
-local map_categories = {
+local b = {
   misc_maps,
   window_maps,
   quickfix_maps,
   movement_maps,
   tab_maps,
-  changelist_maps,
-  legendary_maps
+  changelist_maps
 }
 
 local maps = {}
 
--- This is needed because of how I decided to do my configuration.
--- I decided to segment my mappings into their own category. Then
--- store that in a table. But legendary doesn't want that.
--- It just wants ONE table with ALL mappings. This for loop
--- creates that one table called maps
-for _, map_category in pairs(map_categories) do
+for _, map_category in pairs(b) do
   for _, individual_map in pairs(map_category) do
     table.insert(maps, individual_map)
   end
 end
+
 
 return maps

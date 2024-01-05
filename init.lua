@@ -1,6 +1,5 @@
 require("settings")
-require("autocmds")
-require("keymaps")
+-- require("autocmds")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -22,6 +21,5 @@ require("lazy").setup {
   require("lsp"),
   require("hydras"),
   require("writing"),
+  require("qol"),
 }
-
-

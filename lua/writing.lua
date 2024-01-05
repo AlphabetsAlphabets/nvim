@@ -42,7 +42,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     config = function()
       require 'nvim-treesitter.configs'.setup {
-        ensure_installed = { "lua", "rust" },
+        ensure_installed = { "lua", "rust", "c", "python" },
         highlight = {
           enable = true,
         },
@@ -50,68 +50,4 @@ return {
     end,
   },
   "tpope/vim-commentary",
-  {
-    "shortcuts/no-neck-pain.nvim",
-    lazy = true,
-    version = "*",
-    opts = {
-      width = 100,
-      background = vim.g.colors_name,
-
-      autocmds = {
-        enableOnVimEnter = true,
-        enableOnTabEnter = true,
-        reloadOnColorSchemeChange = true,
-      },
-
-      buffers = {
-        right = {
-          enabled = false,
-        },
-      },
-
-      mappings = {
-        enabled = true,
-        toggle = "<leader>z"
-      }
-    },
-  },
-  {
-    "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-neorg/neorg-telescope"
-    },
-    keys = {
-      {
-        "<LocalLeader>li",
-        function() vim.cmd("Neorg workspace notes") end,
-        { silent = true }
-      },
-      { "<LocalLeader>nr",
-        function() vim.cmd("Neorg return") end,
-        { silent = true }
-      }
-    },
-    config = function()
-      require("neorg").setup {
-        load = {
-          ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.concealer"] = {
-            config = {
-              folds = false,
-            }
-          },                  -- Adds pretty icons to your documents
-          ["core.dirman"] = { -- Manages Neorg workspaces
-            config = {
-              workspaces = {
-                notes = "~/Documents/neorg",
-              },
-            },
-          },
-        },
-      }
-    end,
-  }
 }

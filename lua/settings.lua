@@ -1,9 +1,6 @@
 -- Statusline
 vim.opt.statusline = "%m %l:%c/%L (%p%%) %=%f"
 
--- For VimTex
-vim.cmd("filetype plugin indent on")
-
 -- By default searches are case insensitive unless an uppercase is
 -- included in the search. This is annoying so this makes all searches
 -- case insensitive.
@@ -46,6 +43,8 @@ vim.opt.expandtab = true
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
+vim.opt.virtualedit = "block"
+vim.opt.inccommand = "split"
 
 vim.opt.signcolumn = "auto"
 vim.opt.hlsearch = false
