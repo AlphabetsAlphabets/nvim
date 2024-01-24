@@ -23,3 +23,4 @@ require("lazy").setup {
   require("writing"),
   require("qol"),
 }
+

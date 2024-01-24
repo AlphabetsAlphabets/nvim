@@ -45,6 +45,7 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.virtualedit = "block"
 vim.opt.inccommand = "split"
+vim.opt.foldmethod = "manual"
 
 vim.opt.signcolumn = "auto"
 vim.opt.hlsearch = false

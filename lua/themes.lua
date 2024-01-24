@@ -1,8 +1,13 @@
 return {
   {
     "nyoom-engineering/oxocarbon.nvim",
+  },
+  {
+    'AlexvZyl/nordic.nvim',
+    lazy = false,
+    priority = 1000,
     config = function()
-      vim.cmd("colo oxocarbon")
+      require 'nordic'.load()
     end
   },
   "NTBBloodbath/sweetie.nvim",
