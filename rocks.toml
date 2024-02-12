@@ -1,0 +1,37 @@
+# This is your rocks.nvim plugins declaration file.
+# Here is a small yet pretty detailed example on how to use it:
+#
+# [plugins]
+# nvim-treesitter = "semver_version"  # e.g. "1.0.0"
+
+# List of non-Neovim rocks.
+# This includes things like `toml` or other lua packages.
+[rocks]
+
+# List of Neovim plugins to install alongside their versions.
+# If the plugin name contains a dot then you must add quotes to the key name!
+[plugins]
+"rocks.nvim" = "2.7.2" # rocks.nvim can also manage itself :D
+"rocks-git.nvim" = "1.2.1"
+
+"nvim-treesitter" = { git = "nvim-treesitter/nvim-treesitter" }
+
+"fzf-lua" = "0.0.1118"
+"plenary.nvim" = "scm"
+"neo-tree" = { git = "nvim-neo-tree/neo-tree.nvim" }
+
+"hydra" = { git = "anuvyklack/hydra.nvim" }
+"nui.nvim" = "0.2.0"
+
+"gitsigns" = { git = "lewis6991/gitsigns.nvim" }
+"neogit" = { git = "NeogitOrg/neogit" }
+
+"nvim-lspconfig" = { git = "neovim/nvim-lspconfig" }
+# "renamer" = { git = "filipdutescu/renamer.nvim"}
+# "LuaSnip" = { git = "L3MON4D3/LuaSnip" }
+
+# "nvim-cmp" = { git = "hrsh7th/nvim-cmp" }
+# "cmp-git" = { git = "petertriho/cmp-git" }
+# "cmp-nvim-lsp" = { git = "hrsh7th/cmp-nvim-lsp" }
+# "cmp-nvim-lsp-signature-help" = { git = "hrsh7th/cmp-nvim-lsp-signature-help" }
+# "cmp_luasnip" = { git = "saadparwaiz1/cmp_luasnip" }
