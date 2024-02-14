@@ -25,13 +25,6 @@
 
 "gitsigns" = { git = "lewis6991/gitsigns.nvim" }
 "neogit" = { git = "NeogitOrg/neogit" }
+"diffview.nvim" = { git = "sindrets/diffview.nvim" }
 
 "nvim-lspconfig" = { git = "neovim/nvim-lspconfig" }
-# "renamer" = { git = "filipdutescu/renamer.nvim"}
-# "LuaSnip" = { git = "L3MON4D3/LuaSnip" }
-
-# "nvim-cmp" = { git = "hrsh7th/nvim-cmp" }
-# "cmp-git" = { git = "petertriho/cmp-git" }
-# "cmp-nvim-lsp" = { git = "hrsh7th/cmp-nvim-lsp" }
-# "cmp-nvim-lsp-signature-help" = { git = "hrsh7th/cmp-nvim-lsp-signature-help" }
-# "cmp_luasnip" = { git = "saadparwaiz1/cmp_luasnip" }
