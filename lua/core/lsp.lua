@@ -15,10 +15,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local opts = { buffer = ev.buf }
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
         vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+        vim.keymap.set("n", "<leader>s", vim.lsp.buf.document_symbol, opts)
+        vim.keymap.set("n", "<leader>S", vim.lsp.buf.workspace_symbol, opts)
 
         vim.keymap.set("n", "<leader>i", vim.lsp.buf.implementation, opts)
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+
 
         -- Hover shows information about symbol like type
         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
