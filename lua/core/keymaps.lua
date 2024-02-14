@@ -20,8 +20,8 @@ vim.keymap.set("n", "<A-W>", "<C-w>k<C-w>_")
 vim.keymap.set("n", "<A-D>", "<C-w>l<C-w>|")
 
 -- Quick fix
-vim.keymap.set("n", "[qc", ":ccl<CR>")
-vim.keymap.set("n", "[qo", ":copen<CR>")
+vim.keymap.set("n", "[q", ":cnext<CR>")
+vim.keymap.set("n", "]q", ":cprevious<CR>")
 
 vim.keymap.set("n", "<leader>.", "5<C-w>>")
 vim.keymap.set("n", "<leader>,", "5<C-w><")
