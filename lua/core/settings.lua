@@ -1,5 +1,6 @@
 -- Statusline
 vim.opt.statusline = "%m %l:%c/%L (%p%%) %=%f"
+vim.opt.termguicolors = true
 
 -- By default searches are case insensitive unless an uppercase is
 -- included in the search. This is annoying so this makes all searches
@@ -58,3 +59,5 @@ vim.opt.showmatch = true
 
 -- Convenience
 vim.opt.clipboard = "unnamedplus"
+
+vim.cmd("colo iceberg")

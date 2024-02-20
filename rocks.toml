@@ -28,3 +28,5 @@
 "diffview.nvim" = { git = "sindrets/diffview.nvim" }
 
 "nvim-lspconfig" = { git = "neovim/nvim-lspconfig" }
+"iceberg" = { git = "cocopon/iceberg.vim" }
+"dashboard-nvim" = { git = "nvimdev/dashboard-nvim" }
