@@ -18,7 +18,6 @@
 
 "fzf-lua" = "0.0.1118"
 "plenary.nvim" = "scm"
-"neo-tree" = { git = "nvim-neo-tree/neo-tree.nvim" }
 
 "hydra" = { git = "anuvyklack/hydra.nvim" }
 "nui.nvim" = "0.2.0"
@@ -30,3 +29,4 @@
 "nvim-lspconfig" = { git = "neovim/nvim-lspconfig" }
 "iceberg" = { git = "cocopon/iceberg.vim" }
 "dashboard-nvim" = { git = "nvimdev/dashboard-nvim" }
+"oil-nvim" = { git = "stevearc/oil.nvim" }
